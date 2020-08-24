@@ -30,10 +30,7 @@ class ViewController: UIViewController {
         valueSliderGreen.minimumTrackTintColor = .green
         valueSliderBlue.minimumTrackTintColor = .blue
         
-        mixColorsView.backgroundColor = UIColor (red: CGFloat(valueSliderRed.value),
-                                                 green: CGFloat(valueSliderGreen.value),
-                                                 blue: CGFloat(valueSliderBlue.value),
-                                                 alpha: mixColorsView.alpha)
+        colorAssignmentRGB()
         
     }
     
@@ -41,32 +38,28 @@ class ViewController: UIViewController {
         let sliderValue = CGFloat(valueSliderRed.value)
         valueAlphaRedColor.text = String(format: "%.2f",sliderValue)
         mixColorsView.backgroundColor = mixColorsView.backgroundColor?.withAlphaComponent(sliderValue)
-        mixColorsView.backgroundColor = UIColor (red: CGFloat(valueSliderRed.value),
-                                                       green: CGFloat(valueSliderGreen.value),
-                                                       blue: CGFloat(valueSliderBlue.value),
-                                                       alpha: mixColorsView.alpha)
+        colorAssignmentRGB()
     }
     
     @IBAction func changedGreenColor() {
         let sliderValue = CGFloat(valueSliderGreen.value)
         valueAlphaGreenColor.text = String(format: "%.2f",sliderValue)
         mixColorsView.backgroundColor = mixColorsView.backgroundColor?.withAlphaComponent(sliderValue)
-        mixColorsView.backgroundColor = UIColor (red: CGFloat(valueSliderRed.value),
-                                                 green: CGFloat(valueSliderGreen.value),
-                                                 blue: CGFloat(valueSliderBlue.value),
-                                                 alpha: mixColorsView.alpha)
+        colorAssignmentRGB()
     }
     
     @IBAction func changedBlueColor() {
         let sliderValue = CGFloat(valueSliderBlue.value)
         valueAlphaBlueColor.text = String(format: "%.2f",sliderValue)
         mixColorsView.backgroundColor = mixColorsView.backgroundColor?.withAlphaComponent(sliderValue)
-        mixColorsView.backgroundColor = UIColor (red: CGFloat(valueSliderRed.value),
-                                                 green: CGFloat(valueSliderGreen.value),
-                                                 blue: CGFloat(valueSliderBlue.value),
-                                                 alpha: mixColorsView.alpha)
+        colorAssignmentRGB() 
     }
     
-    
+    private func colorAssignmentRGB() {
+        mixColorsView.backgroundColor = UIColor(red: CGFloat(valueSliderRed.value),
+                                             green: CGFloat(valueSliderGreen.value),
+                                             blue: CGFloat(valueSliderBlue.value),
+                                             alpha: mixColorsView.alpha)
+    }
 }
 
