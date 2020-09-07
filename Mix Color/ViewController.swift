@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
     
     
@@ -21,6 +23,13 @@ class ViewController: UIViewController {
     @IBOutlet var valueSliderGreen: UISlider!
     @IBOutlet var valueSliderBlue: UISlider!
     
+    var redValueColor = CGFloat(0.0)
+    var greenValueColor = CGFloat(0.0)
+    var blueValueColor = CGFloat(0.0)
+    
+    var delegate: MainViewController!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +38,14 @@ class ViewController: UIViewController {
         valueSliderRed.minimumTrackTintColor = .red
         valueSliderGreen.minimumTrackTintColor = .green
         valueSliderBlue.minimumTrackTintColor = .blue
+        
+        valueSliderRed.value = Float(redValueColor)
+        valueSliderGreen.value = Float(greenValueColor)
+        valueSliderBlue.value = Float(blueValueColor)
+        
+        valueAlphaRedColor.text = String(format: "%.2f", valueSliderRed.value)
+        valueAlphaGreenColor.text = String(format: "%.2f", valueSliderGreen.value)
+        valueAlphaBlueColor.text = String(format: "%.2f", valueSliderBlue.value)
         
         colorAssignmentRGB()
         
@@ -55,11 +72,31 @@ class ViewController: UIViewController {
         colorAssignmentRGB() 
     }
     
-    private func colorAssignmentRGB() {
+    @IBAction func doneButton() {
+        delegate.transferColor(color: mixColorsView.backgroundColor ?? UIColor.clear)
+        delegate.redAlphaValue = CGFloat(valueSliderRed.value)
+        delegate.greenAlphaValue = CGFloat(valueSliderGreen.value)
+        delegate.blueAlphaValue = CGFloat(valueSliderBlue.value)
+        dismiss(animated: true)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let mainVC = segue.destination as! MainViewController
+        mainVC.redAlphaValue = CGFloat(valueSliderRed.value)
+        mainVC.greenAlphaValue = CGFloat(valueSliderGreen.value)
+        mainVC.blueAlphaValue = CGFloat(valueSliderBlue.value)
+    }
+    
+    func colorAssignmentRGB() {
         mixColorsView.backgroundColor = UIColor(red: CGFloat(valueSliderRed.value),
                                              green: CGFloat(valueSliderGreen.value),
                                              blue: CGFloat(valueSliderBlue.value),
                                              alpha: mixColorsView.alpha)
     }
 }
+
+
+
+
 

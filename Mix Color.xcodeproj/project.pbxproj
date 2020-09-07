@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		455F70452505FE640005C0B3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F70442505FE640005C0B3 /* MainViewController.swift */; };
 		457DB37B24F286F800CEE8DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DB37A24F286F800CEE8DF /* AppDelegate.swift */; };
 		457DB37D24F286F800CEE8DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DB37C24F286F800CEE8DF /* SceneDelegate.swift */; };
 		457DB37F24F286F800CEE8DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457DB37E24F286F800CEE8DF /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		455F70442505FE640005C0B3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		457DB37724F286F800CEE8DF /* Mix Color.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mix Color.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		457DB37A24F286F800CEE8DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		457DB37C24F286F800CEE8DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				457DB37A24F286F800CEE8DF /* AppDelegate.swift */,
 				457DB37C24F286F800CEE8DF /* SceneDelegate.swift */,
+				455F70442505FE640005C0B3 /* MainViewController.swift */,
 				457DB37E24F286F800CEE8DF /* ViewController.swift */,
 				457DB38024F286F800CEE8DF /* Main.storyboard */,
 				457DB38324F286F900CEE8DF /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				457DB37F24F286F800CEE8DF /* ViewController.swift in Sources */,
 				457DB37B24F286F800CEE8DF /* AppDelegate.swift in Sources */,
 				457DB37D24F286F800CEE8DF /* SceneDelegate.swift in Sources */,
+				455F70452505FE640005C0B3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
